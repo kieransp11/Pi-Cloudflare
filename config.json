@@ -1,0 +1,1 @@
+{"headers": {"X-Auth-Email": "MY-EMAIL-HERE", "X-Auth-Key": "MY-GLOBAL-API-KEY"}, "domains": {"example.com": {"www": "A"}}, "ip": "0.0.0.0"}
