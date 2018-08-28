@@ -2,6 +2,7 @@ import urllib.request
 import urllib.parse
 from typing import Dict
 import json
+import os
 
 headers = {
     "Content-Type": "application/json"
@@ -104,8 +105,10 @@ def point_sub_domain_here(domain: str, sub_domain="", record_type="A") -> bool:
 def main():
     global headers
 
+    path = os.path.dirname(os.path.realpath(__file__))
+
     # Load the config file
-    with open('config.json', 'r') as f:
+    with open(path+'/config.json', 'r') as f:
         config = json.load(f)
 
     ip = get_ip()
