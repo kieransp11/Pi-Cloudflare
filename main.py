@@ -105,10 +105,10 @@ def point_sub_domain_here(domain: str, sub_domain="", record_type="A") -> bool:
 def main():
     global headers
 
-    path = os.path.dirname(os.path.realpath(__file__))
+    config_file_path = os.path.dirname(os.path.realpath(__file__))+"/config.json"
 
     # Load the config file
-    with open(path+'/config.json', 'r') as f:
+    with open(config_file_path, 'r') as f:
         config = json.load(f)
 
     ip = get_ip()
@@ -131,7 +131,7 @@ def main():
 
     # update config file with new IP
     config["ip"] = ip
-    with open("config.json", "w") as f:
+    with open(config_file_path, "w") as f:
         json.dump(config, f)
 
 
